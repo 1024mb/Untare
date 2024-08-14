@@ -1,5 +1,8 @@
 name: Create Release
 
+env:
+  FLUTTER_VERSION: 3.22.2
+
 on:
   push:
     # Sequence of patterns matched against refs/tags
