@@ -1,8 +1,5 @@
 name: Build Debug
 
-env:
-  FLUTTER_VERSION: 3.22.2
-
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -25,7 +22,7 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: stable
-        flutter-version: ${{env.FLUTTER_VERSION}}
+        flutter-version-file: pubspec.yaml
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk --debug
