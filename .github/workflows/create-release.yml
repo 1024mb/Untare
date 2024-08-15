@@ -1,5 +1,8 @@
 name: Create Release
 
+env:
+  JAVA_VERSION: '17'
+
 on:
   push:
     # Sequence of patterns matched against refs/tags
@@ -21,6 +24,11 @@ jobs:
           ENCODED_STRING: ${{ secrets.KEYSTORE }}
         run: |
           echo $ENCODED_STRING | base64 -di > "${RUNNER_TEMP}"/keystore.jks
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{env.JAVA_VERSION}}
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
