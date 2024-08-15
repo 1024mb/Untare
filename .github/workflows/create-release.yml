@@ -26,6 +26,8 @@ jobs:
         with:
           channel: stable
           flutter-version-file: pubspec.yaml
+      - run: flutter --version
+      - run: java --version
       - run: flutter pub get
       - run: flutter test
       - run: flutter build apk --release
