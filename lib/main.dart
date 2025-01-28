@@ -173,6 +173,7 @@ class Tare extends StatelessWidget {
                 ],
                 supportedLocales: const [
                   Locale('en'),
+                  Locale('es'),
                   Locale('de'),
                   Locale('fr'),
                   Locale('nl'),
